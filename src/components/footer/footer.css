@@ -50,6 +50,7 @@
 .footer__copyright{
     flex: 1;
     display: flex;
+    align-items: center;
     margin: 30px 11.45% 20px 11.45%;
     gap: 56px;
 }

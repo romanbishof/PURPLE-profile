@@ -1,4 +1,4 @@
-import { Avatar, Card, Form, FormLayout, Layout, TextField } from '@shopify/polaris';
+import { Avatar, Card, Layout, TextField } from '@shopify/polaris';
 import React from 'react';
 import './profile.css'
 import profileLarge from '../../assets/profileLarge.png'

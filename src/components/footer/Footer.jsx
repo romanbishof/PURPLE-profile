@@ -1,4 +1,3 @@
-import { Heading, Layout } from '@shopify/polaris';
 import React from 'react';
 import './footer.css'
 import logo from '../../assets/logo.svg'
