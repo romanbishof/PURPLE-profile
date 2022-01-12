@@ -1,0 +1,71 @@
+.profile{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+.profile__sectionA{
+    flex: 1;
+    max-width: 255px;
+    max-height: 196px;
+
+}
+
+.profile__sectionB{
+    flex: 2;
+    max-width: 685px;
+    max-height: 635px;
+}
+
+.profile__sectionA h3{
+    font-family: Gordita;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    color: black;
+}
+
+.profile__sectionA p{
+    font-family: Gordita;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 23px;
+    color: #6B7381;
+}
+
+.profile__sectionB-desc{
+    padding: 20px;
+    border-radius: 8px;
+    background: #FAFAFB;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.profile__sectionB-wrapper{
+    display: flex;
+    gap: 7.7px;
+}
+
+.profile__sectionB-wrapper_state{
+    width: 126px;
+}
+
+.profile__sectionB-wrapper_phone{
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
