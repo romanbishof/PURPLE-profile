@@ -1,14 +1,18 @@
 .footer{
    display: flex;
    justify-content: center;
-   background: black;
    padding: 50px;
+}
+.footer__start{
+    border-top: 1px solid #A3ACBD;
+    margin-top: 60px;
 }
 
 .footer__wrapper{
     display: flex;
     flex-direction: column;
     padding: 60px 100px 0 100px;
+    
 }
 
 

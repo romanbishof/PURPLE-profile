@@ -6,6 +6,9 @@ import logo from '../../assets/logo.svg'
 const Footer = () => {
     return (
         <div classname="footer">
+            <div className="footer__start">
+                <span></span>
+            </div>
             <div className="footer__wrapper">
                 <div className="footer__desc">
                         <h2>How it works?</h2>
