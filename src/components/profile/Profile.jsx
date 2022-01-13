@@ -25,12 +25,14 @@ const Profile = () => {
                         <TextField
                             value={profileData.jobTitle}
                             label="Job title"
-                            autoComplete='off'/>
+                            autoComplete='off'
+                            placeholder='Web developer'/>
 
                         <TextField
                             value={profileData.currentCompany}
                             label="Current company"
-                            autoComplete='off'/>
+                            autoComplete='off'
+                            placeholder='Purple software playground'/>
                         
                         <TextField
                             value={profileData.about}
@@ -38,14 +40,17 @@ const Profile = () => {
                             multiline={7}
                             autoComplete='off'
                             helpText
+                            placeholder='somthing somthing a lot of somthing'
                         />
                         <div className="profile__sectionB-wrapper">
                             <div className = 'profile__sectionB-wrapper_state'>
                                 <TextField
+                                placeholder='+972'
                                     value={profileData.phone.areaCode}/>
                             </div>
                             <div className="profile__sectionB-wrapper_phone">
                                 <TextField
+                                    placeholder='0525267022'
                                     value={profileData.phone.number}
                                 />
                             </div>
