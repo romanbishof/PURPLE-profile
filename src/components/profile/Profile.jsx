@@ -1,7 +1,6 @@
 import { Avatar, Card, Layout, TextField } from '@shopify/polaris';
 import React from 'react';
 import './profile.css'
-import profileLarge from '../../assets/profileLarge.png'
 import { useSelector } from 'react-redux';
 
 const Profile = () => {

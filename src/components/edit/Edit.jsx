@@ -74,7 +74,7 @@ const Edit = () => {
                                         >
                                         {fileUpload}
                                         
-                                        <img src={img !== null ? img : ''}  />
+                                        <img src={img !== null ? img : ''} alt="" />
                                 
                                     </DropZone>
                                 </div>
