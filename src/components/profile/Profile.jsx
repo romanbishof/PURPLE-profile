@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 const Profile = () => {
 
     const profileData = useSelector(state => state.profile)
-    console.log(profileData);
+    
     return (
         <div className="profile">
             <div className="profile__sectionA">

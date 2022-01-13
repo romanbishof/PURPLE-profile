@@ -1,18 +1,14 @@
-import { Caption, Card, DropZone, Layout, Select, Stack, TextField, Thumbnail } from '@shopify/polaris';
-import { NoteMinor } from '@shopify/polaris-icons';
+import { Card, DropZone, Layout, Select, TextField } from '@shopify/polaris';
 import React, { useCallback, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { setProfile } from '../redux/profileSlice';
-import ReactCrop from 'react-image-crop';
-import 'react-image-crop/dist/ReactCrop.css';
 import './edit.css'
 
 const Edit = () => {
 
     const profileData = useSelector(state => state.profile)
-
     const [selected, setSelected] = useState(profileData.phone.areaCode);
     const [jobTitle, setJobTitle] = useState(profileData.jobTitle)
     const [curentCompany, setCurrentCompany] = useState(profileData.currentCompany)
@@ -21,23 +17,16 @@ const Edit = () => {
     const [img , setImg] = useState('')
     const [files, setFiles] = useState([]);
 
-    // const handleDropZoneDrop = useCallback(
-    //     (_dropFiles, acceptedFiles, _rejectedFiles) =>
-    //     setFiles((files) => [...files, ...acceptedFiles]),
-    //     [],
-    // );
-
     const handleDropZoneDrop = (files, _rejectedFiles) => {
         setFiles(files)
         const currentFile = files[0]
         const reader = new FileReader()
         reader.addEventListener("load", () => {
-            // console.log(reader.result);
+            
             setImg(reader.result)
         } , false )
 
         reader.readAsDataURL(currentFile)
-        // console.log(currentFile);
     }
     const handleSelectChange = useCallback((value) => setSelected(value), []);
 
@@ -59,8 +48,6 @@ const Edit = () => {
         dispatch(setProfile(profile))
         navigate('/')
     }
-    const [crop, setCrop] = useState({ aspect: 16 / 9 });
-
     const options = [
         {label: '', value: 0},
         {label: '+972', value: '+972'},
@@ -68,27 +55,7 @@ const Edit = () => {
         {label: '+974', value: '+974'},
     ];
 
-    //   const validImageTypes = ['image/gif', 'image/jpeg', 'image/png'];
-
-      const fileUpload = !files.length && <DropZone.FileUpload />;
-    //   const uploadedFiles = files.length > 0 && (
-    //     <Stack vertical>
-    //       {files.map((file, index) => (
-    //         <Stack alignment="center" key={index}>
-    //           <Thumbnail
-    //             size="large"
-    //             alt={file.name}
-    //             source={
-    //               validImageTypes.includes(file.type)
-    //                 ? window.URL.createObjectURL(file)
-    //                 : NoteMinor
-    //             }
-    //           />
-
-    //         </Stack>
-    //       ))}
-    //     </Stack>
-    //   );
+    const fileUpload = !files.length && <DropZone.FileUpload />;
 
     return (
         <div className='edit'>
@@ -105,16 +72,10 @@ const Edit = () => {
                                         allowMultiple={false}
                                         accept='image/*'
                                         >
-                                            
-                                            {fileUpload}
-                                            {img !== null ? 
-                                            <div>
-                                                <ReactCrop src={img} crop={crop}/>
-                                            </div> :
-
-                                                <img src={img !== null ? img : ''}  />    
-                                            }
-
+                                        {fileUpload}
+                                        
+                                        <img src={img !== null ? img : ''}  />
+                                
                                     </DropZone>
                                 </div>
                                 <div className="obj">

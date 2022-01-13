@@ -16,7 +16,7 @@ const profileSlice = createSlice({
     initialState,
     reducers:{
         setProfile:(state, action) => {
-            state.avatarImg = action.payload.avatarImg
+            state.avatarImg = action.payload.avatarImg === '' ? state.avatarImg : action.payload.avatarImg 
             state.jobTitle = action.payload.jobTitle
             state.currentCompany = action.payload.currentCompany
             state.about = action.payload.about

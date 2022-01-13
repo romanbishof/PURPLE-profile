@@ -3,8 +3,12 @@ import React, { useCallback, useState } from 'react';
 import logo from '../../assets/logo.svg'
 import profileImg from '../../assets/profileImg.png'
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const Header = () => {
+
+  const profileData = useSelector(state => state.profile)
+
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const toggleIsUserMenuOpen = useCallback(
     () => setIsUserMenuOpen((isUserMenuOpen) => !isUserMenuOpen),
@@ -29,7 +33,7 @@ const Header = () => {
     ]}
     open={isUserMenuOpen}
     onToggle={toggleIsUserMenuOpen}
-    avatar={profileImg}
+    avatar={profileData.avatarImg}
     />
   );
   
