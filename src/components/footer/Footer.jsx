@@ -4,7 +4,7 @@ import logo from '../../assets/logo.svg'
 
 const Footer = () => {
     return (
-        <div classname="footer">
+        <div className="footer">
             <div className="footer__start">
                 <span></span>
             </div>
